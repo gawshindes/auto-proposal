@@ -1,10 +1,10 @@
 # proposal-gen
 
-Turns Granola meeting notes into a branded Cloudtech proposal PDF — in seconds.
+Turns meeting  notes into a branded Cloudtech proposal PDF — in seconds.
 
 ## How it works
 
-1. SDR pastes Granola notes into the web form
+1. SDR pastes meeting notes into the web form
 2. Claude reads the notes and generates structured proposal content
 3. Tool renders branded HTML (real header/footer images embedded)
 4. Converts to PDF via WeasyPrint — no Google API, no external services
@@ -29,20 +29,14 @@ pip install -r requirements.txt
 # 2. Configure
 cp .env.example .env
 # Add your ANTHROPIC_API_KEY
+# add port number
 
 # 3. Run
 python app.py
-# → http://localhost:5000
+# → http://localhost:<port>
 ```
 
-## Deploy to Railway
 
-```bash
-npm install -g @railway/cli
-railway login
-railway init   # name it proposal-gen
-railway up
-railway variables set ANTHROPIC_API_KEY=sk-ant-...
 ```
 
 ## Environment Variables
@@ -50,7 +44,7 @@ railway variables set ANTHROPIC_API_KEY=sk-ant-...
 | Variable | Description |
 |---|---|
 | `ANTHROPIC_API_KEY` | Claude API key |
-| `PORT` | Server port (default: 5000) |
+| `PORT` | Server port |
 
 ## Status
 🚧 Work in progress
